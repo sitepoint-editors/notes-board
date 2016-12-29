@@ -1,0 +1,159 @@
+//
+// Base
+// --------------------------------------------------
+
+// Font size for small devices
+$font-size: 16;
+
+// Font size for big devices
+$font-size-secondary: 22;
+
+// Tracking
+$letter-spacing: 0.04em;
+
+// Font families
+$font-primary: 'Gentium Book Basic', serif;
+$font-secondary: 'Ubuntu', sans-serif;
+$font-mono: "Consolas", monospace;
+$font-print-primary: "Georgia", "Times New Roman", "Times", serif;
+$font-print-secondary: "Georgia", "Times New Roman", "Times", serif;
+
+// Enable margins to all the elements
+// except the first one in each nesting level
+$automargin: true;
+
+// ^ How much margin for those elements
+$block-margin: 1lh;
+
+// Transition duration
+$transition-duration: 150ms;
+
+// Custom media queries
+// Use as @media (--medium) { … }
+@custom-media --extra-small (width <= 480px);
+@custom-media --small (width >= 480px);
+@custom-media --medium (width >= 768px);
+@custom-media --large (width >= 960px);
+@custom-media --extra-large (width >= 1100px);
+@custom-media --only-small (480px < width <= 768px);
+@custom-media --only-medium (768px < width <= 980px);
+@custom-media --only-large (980px < width <= 1100px);
+
+// Spacing variables
+$spacing-xs: 0.5lh;
+$spacing-s:  1lh;
+$spacing-m:  2lh;
+$spacing-l:  3lh;
+$spacing-xl: 4lh;
+
+//
+// Type Scale
+// --------------------------------------------------
+
+// Suggested ratios
+// Source: http://type-scale.com/
+$_minor-second:     1.067;
+$_major-second:     1.125;
+$_minor-third:      1.200;
+$_major-third:      1.250;
+$_perfect-fourth:   1.333;
+$_augmented-fourth: 1.414;
+$_perfect-fifth:    1.500;
+$_golden-ratio:     1.618;
+
+// Ratio for primary scale
+$scale-ratio: 1;
+
+// Ratio for secondary scale
+$scale-ratio-secondary: $_perfect-fourth;
+
+//
+// Grid
+// --------------------------------------------------
+
+// Enable grid styles
+$enable-grid: true;
+
+// Enable x-*, sm-*, md-*, lg-*, xl-* columns and offsets
+$full-grid: false;
+
+// Max width for container
+$container-width: 800px;
+
+// Gutter size
+$gutter: 2rem;
+
+// Number of columns in a row
+$num-columns: 12;
+
+// Prefix for attributes
+$prefix: '';
+
+// Create columns and offsets above this breakpoint
+$breakpoint: --small;
+
+//
+// Color Palette
+// --------------------------------------------------
+// Use the getColor() function to use those values in
+// your stylesheets. Example: getColor(base, primary)
+
+$colors: (
+  base: (
+    "primary":   #C65146,
+    "selection": #EBE1D3,
+    "lines":     #222
+  ),
+
+  text: (
+    "primary":   #444,
+    "secondary": #777,
+    "heading":   #222,
+    "inverted":  white
+  ),
+
+  background: (
+    "dark":  #32373d,
+    "light": #f5f5f5,
+    "body":  white
+  ),
+
+  state: (
+    "muted":   #eee,
+    "success": #10a887,
+    "warning": #F17F42,
+    "error":   #da3c3c
+  ),
+
+  blue: (
+    "darker":  #1573b6,
+    "dark":    #1e80c6,
+    "base":    #2b90d9,
+    "light":   #3fa2e9,
+    "lighter": #4eb1f9
+  ),
+
+  green: (
+    "darker":  #089073,
+    "dark":    #0b9d7d,
+    "base":    #10a887,
+    "light":   #1eb896,
+    "lighter": #28ceaa
+  ),
+
+  red: (
+    "darker":  #653131,
+    "dark":    #b73333,
+    "base":    #da3c3c,
+    "light":   #f25a5a,
+    "lighter": #fa8181
+  ),
+
+  gray: (
+    "darker":  #333333,
+    "dark":    #4d4d4d,
+    "base":    #666666,
+    "light":   #808080,
+    "lighter": #999999
+  )
+);

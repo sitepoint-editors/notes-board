@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  header(container)
+    h1 Notes Board
+
+    nav
+      ul
+        li: a(href='/') Home
+        li: a(href='#note-form' rel='modal:open') Update
+        li: a(href=`/note/${note.slug}/delete`) Delete
+
+  main(container).note-content
+    include components/note
+
+  form(action=`/note/${note.slug}` method='PUT').note-form#note-form
+      p: input(name='noteTitle' type='text' value=note.title)
+      p: input(name='noteDescription' type='text' value=note.description)
+      p: textarea(name='noteContent')= note.content
+      p._text-right: input(type='submit' value='Update')

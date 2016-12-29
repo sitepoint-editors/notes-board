@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  header(container)
+    h1 Notes Board
+
+    nav
+      ul
+        li: a(href='#note-form' rel='modal:open') Publish
+
+  main(container).notes-list
+    each note in data.notes
+      include components/note
+
+  form(action='/note' method='POST').note-form#note-form
+      p: input(name='noteTitle' type='text' placeholder='Title…')
+      p: input(name='noteDescription' type='text' placeholder='Short description…')
+      p: textarea(name='noteContent') Write here the content of the new note…
+      p._text-right: input(type='submit' value='Submit')
