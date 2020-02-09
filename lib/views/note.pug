@@ -1,20 +1,36 @@
 extends layout
 
 block content
-  header(container)
-    h1 Notes Board
+  section.section
+    .container
+      h1.title.has-text-centered
+          | Notes Board
 
-    nav
-      ul
-        li: a(href='/') Home
-        li: a(href='#note-form' rel='modal:open') Update
-        li: a(href=`/note/${note.slug}/delete`) Delete
+      .tabs.is-centered
+        ul
+          li: a(href='/') Home
+          li: a.show-modal(href='#') Update
+          li: a(href=`/note/${note.slug}/delete`) Delete
+  
+      include components/note
 
-  main(container).note-content
-    include components/note
-
-  form(action=`/note/${note.slug}` method='PUT').note-form#note-form
-      p: input(name='noteTitle' type='text' value=note.title)
-      p: input(name='noteDescription' type='text' value=note.description)
-      p: textarea(name='noteContent')= note.content
-      p._text-right: input(type='submit' value='Update')
+      .modal
+        .modal-background
+        .modal-card
+          header.modal-card-head
+            p.modal-card-title Edit note
+            button.delete(aria-label='close')
+          section.modal-card-body
+            form(action=`/note/${note.slug}` method='PUT').note-form#note-form
+              .field
+                .control
+                  input.input(name='noteTitle' type='text' placeholder='Title' value=note.title)
+              .field
+                .control
+                  input.input(name='noteDescription' type='text' placeholder='Short description' value=note.description)
+              .field
+                .control
+                  textarea.textarea(name='noteContent' placeholder='Contents') #{note.content}
+              .field
+                .control
+                  button.button.is-link Save

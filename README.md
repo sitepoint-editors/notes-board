@@ -6,7 +6,7 @@ https://www.sitepoint.com/node-js-mvc-application
 
 ## Requirements
 
-* [Node.js](http://nodejs.org/) (v6 or higher)
+* [Node.js](http://nodejs.org/) (v8 or higher)
 
 ## Installation Steps
 
@@ -19,7 +19,7 @@ https://www.sitepoint.com/node-js-mvc-application
 
 The MIT License (MIT)
 
-Copyright (c) 2017 SitePoint
+Copyright (c) 2020 SitePoint
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
